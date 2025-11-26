@@ -32,7 +32,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"modern-normalize": "^3.0.1",
-		"publint": "^0.3.11",
-		"sass": "^1.86.3"
+		"publint": "^0.3.15",
+		"sass": "^1.94.2"
 	}
 }

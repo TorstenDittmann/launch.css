@@ -10,10 +10,10 @@
 	},
 	"devDependencies": {
 		"highlight.js": "^11.11.1",
-		"htmx-ext-preload": "^2.1.1",
-		"htmx.org": "^1.9.12",
+		"htmx-ext-preload": "^2.1.2",
+		"htmx.org": "^2.0.8",
 		"launch.css": "workspace:*",
-		"vite": "^6.2.0",
+		"vite": "^7.2.4",
 		"vite-plugin-handlebars": "^2.0.0"
 	}
 }

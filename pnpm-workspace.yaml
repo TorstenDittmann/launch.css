@@ -1,7 +1,0 @@
-gitChecks: false
-packages:
-    - "packages/*"
-    - "apps/*"
-    - "examples/*"
-catalog:
-    vite: ^6.2.6

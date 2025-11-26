@@ -26,7 +26,7 @@
 		<script defer src="https://cloud.umami.is/script.js" data-website-id="8c20b3c7-dd6d-4e57-bf9d-135879bc574a"></script>
 	</head>
 
-	<body data-layout="website" hx-ext="preload">
+	<body data-layout="{{#if bodyLayout}}{{bodyLayout}}{{else}}website{{/if}}" hx-ext="preload">
 		<header>
 			<nav hx-boost="true" preload="mouseover">
 				<a href="/">launch.css</a>

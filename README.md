@@ -102,6 +102,8 @@ Check the `examples` directory for complete implementation examples:
 
 Visit [https://launch-css.dev](https://launch-css.dev) for complete documentation and examples.
 
+LLM quickstart reference: [apps/docs/public/llm.txt](apps/docs/public/llm.txt)
+
 ## License
 
 MIT © [Torsten Dittmann](https://github.com/TorstenDittmann)
