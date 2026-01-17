@@ -19,10 +19,10 @@
 	code={`<body data-layout="website">
   <header>
     <nav>
-      <a href="/"><strong>Brand</strong></a>
+      <a href="#"><strong>Brand</strong></a>
       <ul>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -44,11 +44,11 @@
 <CodePreview
 	code={`<header>
   <nav>
-    <a href="/"><strong>My Site</strong></a>
+    <a href="#"><strong>My Site</strong></a>
     <ul>
-      <li><a href="/features">Features</a></li>
-      <li><a href="/pricing">Pricing</a></li>
-      <li><a href="/docs">Docs</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Docs</a></li>
     </ul>
   </nav>
 </header>`}

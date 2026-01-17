@@ -17,10 +17,10 @@
 	code={`<body data-layout="dashboard">
   <header>
     <nav>
-      <a href="/"><strong>App Name</strong></a>
+      <a href="#"><strong>App Name</strong></a>
       <ul>
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/settings">Settings</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Settings</a></li>
       </ul>
     </nav>
   </header>
@@ -50,11 +50,11 @@
 <CodePreview
 	code={`<header>
   <nav>
-    <a href="/"><strong>Admin Panel</strong></a>
+    <a href="#"><strong>Admin Panel</strong></a>
     <ul>
-      <li><a href="/users">Users</a></li>
-      <li><a href="/analytics">Analytics</a></li>
-      <li><a href="/settings">Settings</a></li>
+      <li><a href="#">Users</a></li>
+      <li><a href="#">Analytics</a></li>
+      <li><a href="#">Settings</a></li>
     </ul>
   </nav>
 </header>`}
