@@ -3,11 +3,11 @@
 
 [data-docs] {
 	display: grid;
+	grid-template-columns: 16rem 1fr;
+	align-items: start;
 	gap: 1.5rem;
 	margin: 0 auto;
 	padding-block: 1.5rem;
-	grid-template-columns: 16rem 1fr;
-	align-items: start;
 	@include breakpoints.container;
 	@media (max-width: map.get(breakpoints.$breakpoints, "medium")) {
 		grid-template-columns: 1fr;
@@ -17,9 +17,9 @@
 		position: sticky;
 		top: 1.5rem;
 		align-self: start;
-		padding: 1rem;
 		border: 1px solid var(--border);
 		background-color: var(--background-secondary);
+		padding: 1rem;
 		@media (max-width: map.get(breakpoints.$breakpoints, "medium")) {
 			position: static;
 			order: -1;
@@ -36,15 +36,15 @@
 		ul {
 			display: grid;
 			gap: 0.5rem;
-			padding: 0;
 			margin: 0;
+			padding: 0;
 			list-style-type: none;
 		}
 
 		a {
 			display: inline-flex;
-			gap: 0.35rem;
 			align-items: center;
+			gap: 0.35rem;
 			color: inherit;
 			text-decoration: none;
 			&:hover {

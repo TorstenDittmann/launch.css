@@ -1,0 +1,50 @@
+meter {
+	vertical-align: baseline;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--border);
+	border-radius: 9999px;
+	background: var(--background);
+	width: 100%;
+	height: 1rem;
+	overflow: hidden;
+}
+
+meter::-webkit-meter-bar {
+	border-radius: 9999px;
+	background: var(--background);
+}
+
+meter::-webkit-meter-optimum-value {
+	border-radius: 9999px;
+	background: light-dark(#16a34a, #22c55e);
+}
+
+meter::-webkit-meter-suboptimum-value {
+	border-radius: 9999px;
+	background: light-dark(#ca8a04, #facc15);
+}
+
+meter::-webkit-meter-even-less-good-value {
+	border-radius: 9999px;
+	background: light-dark(#dc2626, #ef4444);
+}
+
+meter::-moz-meter-bar {
+	border-radius: 9999px;
+}
+
+meter:-moz-meter-optimum::-moz-meter-bar {
+	background: light-dark(#16a34a, #22c55e);
+}
+
+meter:-moz-meter-sub-optimum::-moz-meter-bar {
+	background: light-dark(#ca8a04, #facc15);
+}
+
+meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+	background: light-dark(#dc2626, #ef4444);
+}

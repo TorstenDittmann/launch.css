@@ -9,8 +9,8 @@
 		"lint": "dprint check"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.7",
-		"dprint": "^0.50.2",
+		"@biomejs/biome": "2.3.11",
+		"dprint": "^0.51.1",
 		"workspace-utils": "^1.0.6"
 	},
 	"workspaces": {

@@ -10,7 +10,10 @@
 		"formatComments": true,
 		"declarationOrder": "concentric"
 	},
-	"markup": {},
+	"markup": {
+		"scriptIndent": true,
+		"styleIndent": true
+	},
 	"yaml": {},
 	"excludes": ["**/node_modules", "**/*-lock.yaml"],
 	"plugins": [

@@ -1,19 +1,22 @@
 {
-	"name": "docs",
+	"name": "@repo/docs-v2",
+	"version": "0.0.1",
 	"private": true,
-	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
+		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview"
 	},
+	"dependencies": {
+		"highlight.js": "^11.11.0"
+	},
 	"devDependencies": {
-		"highlight.js": "^11.11.1",
-		"htmx-ext-preload": "^2.1.2",
-		"htmx.org": "^2.0.8",
+		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/kit": "^2.15.0",
+		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"launch.css": "workspace:*",
-		"vite": "^7.2.4",
-		"vite-plugin-handlebars": "^2.0.0"
+		"svelte": "^5.0.0",
+		"vite": "catalog:"
 	}
 }
