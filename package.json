@@ -16,11 +16,7 @@
 	"workspaces": {
 		"packages": [
 			"packages/*",
-			"apps/*",
-			"examples/*"
-		],
-		"catalog": {
-			"vite": "^7.0.0"
-		}
+			"apps/*"
+		]
 	}
 }

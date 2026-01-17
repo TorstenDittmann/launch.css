@@ -17,6 +17,6 @@
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"launch.css": "workspace:*",
 		"svelte": "^5.0.0",
-		"vite": "catalog:"
+		"vite": "^7.0.0"
 	}
 }
