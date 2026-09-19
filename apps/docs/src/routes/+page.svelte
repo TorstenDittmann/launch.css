@@ -1,5 +1,13 @@
 <script>
-	import CodeBlock from "$lib/components/CodeBlock.svelte";
+	const markup = `<body data-layout="website">
+  <header><nav><a href="/">Studio</a></nav></header>
+  <main>
+    <section>
+      <h1>Ship the UI now</h1>
+      <button>Continue</button>
+    </section>
+  </main>
+</body>`;
 </script>
 
 <svelte:head>
@@ -10,223 +18,346 @@
 	/>
 </svelte:head>
 
-<div class="landing-hero" aria-label="launch.css">
-	<div class="landing-hero-glow" aria-hidden="true"></div>
-	<div class="landing-hero-content">
-		<p class="landing-eyebrow">Classless CSS</p>
-		<h1>launch.css</h1>
-		<p class="landing-lead">
-			Style semantic HTML directly — no class names, no setup ritual.
-			Ship the interface now; refine the look later.
-		</p>
-		<p class="landing-actions">
-			<a href="/docs/getting-started" role="button">Get Started</a>
-			<a href="/customize" role="button" aria-label="Open Theme Builder"
-			>Theme Builder</a>
-			<a
-				href="https://github.com/TorstenDittmann/launch.css"
-				role="button"
-				aria-label="View on GitHub"
-			>GitHub</a>
-		</p>
-	</div>
-</div>
-
-<div class="landing-demo" aria-label="Live examples">
-	<header class="landing-section-header">
-		<h2>No classes. Still polished.</h2>
-		<p>
-			Buttons, alerts, switches, and more — styled from HTML and ARIA
-			alone.
-		</p>
-	</header>
-
-	<div class="landing-demo-stage">
-		<div role="status">
-			Your project is ready. Write HTML and launch.css does the rest.
+<div class="home">
+	<section class="home-hero">
+		<div class="home-atmosphere" aria-hidden="true">
+			<div class="home-mesh"></div>
+			<div class="home-grid"></div>
+			<pre class="home-watermark">{markup}</pre>
 		</div>
 
-		<p>
-			<img
-				src="https://api.dicebear.com/9.x/thumbs/svg?seed=Launch"
-				alt="Launch avatar"
-			>
-			Welcome back — press <kbd>⌘</kbd> + <kbd>K</kbd> to search.
-		</p>
-
-		<p>
-			<button>Save changes</button>
-			<button aria-label="cancel">Cancel</button>
-			<button aria-label="delete item">Delete</button>
-		</p>
-
-		<label>
-			<input type="checkbox" role="switch" checked>
-			Enable dark mode sync
-		</label>
-
-		<details>
-			<summary>What’s included?</summary>
-			<p>
-				Layouts, forms, dialogs, tabs, timelines, meters, and theme
-				tokens via <code>color-scheme</code>.
+		<div class="home-copy">
+			<p class="home-kicker">Classless CSS framework</p>
+			<h1>launch.css</h1>
+			<p class="home-lead">
+				Write semantic HTML. Get a finished interface. No class names,
+				no design system ceremony — just ship.
 			</p>
-		</details>
-
-		<div role="alert" aria-label="warning">
-			Trial ends in 3 days — upgrade anytime from settings.
+			<p class="home-actions">
+				<a href="/docs/getting-started" role="button">Get Started</a>
+				<a href="/customize" class="home-link">Open Theme Builder</a>
+			</p>
 		</div>
-	</div>
-</div>
+	</section>
 
-<div class="landing-install" aria-label="Installation">
-	<header class="landing-section-header">
-		<h2>Install in one line</h2>
-		<p>Then import it and write semantic HTML.</p>
-	</header>
+	<section class="home-proof" aria-label="Live classless demo">
+		<div class="home-proof-head">
+			<p class="home-kicker">No classes required</p>
+			<h2>This UI is plain HTML and ARIA.</h2>
+		</div>
 
-	<CodeBlock lang="bash" code={`npx nypm add launch.css`} />
+		<div class="home-proof-surface">
+			<header class="home-proof-bar">
+				<strong>Account</strong>
+				<button aria-label="close">Close</button>
+			</header>
 
-	<p class="landing-install-alt">
-		Or drop in a CDN link — see
-		<a href="/docs/getting-started/installation">full installation</a>.
-	</p>
+			<div class="home-proof-grid">
+				<div class="home-proof-profile">
+					<img
+						src="https://api.dicebear.com/9.x/thumbs/svg?seed=Nova"
+						alt="Nova avatar"
+					>
+					<div>
+						<strong>Nova Chen</strong>
+						<p>Product designer · Studio</p>
+					</div>
+				</div>
+
+				<label>
+					<input type="checkbox" role="switch" checked>
+					Sync with system theme
+				</label>
+
+				<label>
+					Display name
+					<input type="text" value="Nova Chen">
+				</label>
+
+				<div role="status">
+					Profile saved. Changes apply on the next refresh.
+				</div>
+
+				<p class="home-proof-actions">
+					<button>Save changes</button>
+					<button aria-label="cancel">Cancel</button>
+					<button aria-label="delete account">Delete</button>
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="home-install">
+		<div class="home-install-inner">
+			<div>
+				<h2>One import. Done.</h2>
+				<p>
+					Drop it in and keep writing HTML —
+					<a href="/docs/getting-started/installation">full install guide</a>.
+				</p>
+			</div>
+			<pre class="home-install-code"><code>npx nypm add launch.css</code></pre>
+		</div>
+	</section>
 </div>
 
 <style>
-	.landing-hero {
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		overflow: hidden;
-		padding: 4rem 1.5rem 5rem;
-		min-height: calc(100vh - 4rem);
-		text-align: center;
+	.home {
 		isolation: isolate;
+		background: var(--site-wash, var(--background));
+		color: var(--site-ink, var(--color));
 	}
 
-	.landing-hero-glow {
+	.home-hero {
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		overflow: clip;
+		padding: 8rem 1.5rem 4.5rem;
+		min-height: 92vh;
+	}
+
+	.home-atmosphere {
 		position: absolute;
-		inset: -20% -10% auto;
+		inset: 0;
 		z-index: -1;
+		pointer-events: none;
+	}
+
+	.home-mesh {
+		position: absolute;
+		inset: -15% 0 auto;
+		height: 85%;
 		background:
 			radial-gradient(
-				ellipse 60% 50% at 50% 0%,
-				light-dark(rgba(24, 24, 27, 0.08), rgba(250, 250, 250, 0.08)),
+				ellipse 60% 50% at 12% 30%,
+				light-dark(rgba(24, 24, 27, 0.12), rgba(250, 250, 250, 0.08)),
 				transparent 70%
 			),
 			radial-gradient(
-				ellipse 40% 35% at 80% 30%,
-				light-dark(rgba(113, 113, 122, 0.12), rgba(161, 161, 170, 0.1)),
-				transparent 60%
+				ellipse 50% 45% at 92% 12%,
+				light-dark(rgba(113, 113, 122, 0.22), rgba(63, 63, 70, 0.5)),
+				transparent 65%
 			),
 			radial-gradient(
-				ellipse 35% 30% at 15% 40%,
-				light-dark(rgba(228, 228, 231, 0.9), rgba(39, 39, 42, 0.55)),
-				transparent 65%
+				ellipse 70% 40% at 48% 70%,
+				light-dark(rgba(228, 228, 231, 0.95), rgba(24, 24, 27, 0.85)),
+				transparent 70%
 			);
-		pointer-events: none;
-		animation: landing-glow 8s ease-in-out infinite alternate;
+		animation: home-drift 16s ease-in-out infinite alternate;
 	}
 
-	.landing-hero-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1rem;
-		max-width: 40rem;
-		animation: landing-rise 0.7s ease-out both;
+	.home-grid {
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(
+				to right,
+				light-dark(rgba(24, 24, 27, 0.045), rgba(250, 250, 250, 0.045))
+					1px,
+				transparent 1px
+			),
+			linear-gradient(
+				to bottom,
+				light-dark(rgba(24, 24, 27, 0.045), rgba(250, 250, 250, 0.045))
+					1px,
+				transparent 1px
+			);
+		background-size: 3.5rem 3.5rem;
+		mask-image: linear-gradient(#000 0%, transparent 88%);
 	}
 
-	.landing-eyebrow {
+	.home-watermark {
+		position: absolute;
+		top: 18%;
+		right: max(1rem, 4vw);
 		margin: 0;
-		color: var(--color-muted);
-		font-weight: 500;
-		font-size: 0.875rem;
-		letter-spacing: 0.08em;
+		opacity: 0.11;
+		color: var(--site-ink, var(--color));
+		font-size: clamp(0.72rem, 1.15vw, 0.9rem);
+		line-height: 1.75;
+		font-family: var(--site-mono, ui-monospace, monospace);
+		white-space: pre;
+		transform: rotate(-3deg);
+		user-select: none;
+	}
+
+	.home-copy {
+		margin: 0 auto;
+		max-width: 72rem;
+		width: 100%;
+		animation: home-rise 0.75s ease-out both;
+	}
+
+	.home-kicker {
+		margin: 0 0 1rem;
+		color: var(--site-muted, var(--color-muted));
+		font-weight: 600;
+		font-size: 0.78rem;
+		letter-spacing: 0.14em;
 		text-transform: uppercase;
-		animation: landing-rise 0.7s ease-out 0.05s both;
 	}
 
-	.landing-hero h1 {
+	.home-hero h1 {
 		margin: 0;
-		font-size: clamp(3rem, 10vw, 5.5rem);
-		line-height: 1;
-		letter-spacing: -0.04em;
-		animation: landing-rise 0.75s ease-out 0.1s both;
+		max-width: 12ch;
+		font-weight: 800;
+		font-size: clamp(4rem, 14vw, 8rem);
+		line-height: 0.9;
+		letter-spacing: -0.06em;
 	}
 
-	.landing-lead {
-		margin: 0;
-		max-width: 32rem;
-		color: var(--color-muted);
-		font-size: 1.125rem;
-		line-height: 1.7;
-		animation: landing-rise 0.75s ease-out 0.18s both;
+	.home-lead {
+		margin: 1.5rem 0 0;
+		max-width: 28rem;
+		color: var(--site-muted, var(--color-muted));
+		font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+		line-height: 1.5;
 	}
 
-	.landing-actions {
+	.home-actions {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
-		gap: 0.75rem;
-		margin: 0.75rem 0 0;
-		animation: landing-rise 0.75s ease-out 0.26s both;
+		align-items: center;
+		gap: 1rem 1.4rem;
+		margin: 2rem 0 0;
 	}
 
-	.landing-demo,
-	.landing-install {
+	.home-link {
+		color: var(--site-ink, var(--color));
+		font-weight: 600;
+		text-decoration: none;
+		text-underline-offset: 5px;
+	}
+
+	.home-link:hover {
+		text-decoration: underline;
+	}
+
+	.home-proof {
+		border-top: 1px solid var(--site-line, var(--border));
+		background: var(--site-panel, var(--background));
+		padding: 3.5rem 0 0;
+	}
+
+	.home-proof-head {
 		margin: 0 auto;
-		padding: 3rem 1.5rem 4rem;
-		max-width: 42rem;
+		padding: 0 1.5rem 2rem;
+		max-width: 72rem;
+		animation: home-rise 0.7s ease-out 0.05s both;
 	}
 
-	.landing-section-header {
-		margin-bottom: 1.5rem;
-		text-align: center;
-	}
-
-	.landing-section-header h2 {
-		margin: 0 0 0.5rem;
-		font-size: clamp(1.5rem, 4vw, 2rem);
-	}
-
-	.landing-section-header p {
+	.home-proof-head h2 {
 		margin: 0;
-		color: var(--color-muted);
+		max-width: 16ch;
+		font-weight: 700;
+		font-size: clamp(1.8rem, 4vw, 2.75rem);
+		line-height: 1.1;
+		letter-spacing: -0.04em;
 	}
 
-	.landing-demo-stage {
-		display: grid;
-		gap: 1.25rem;
-		border: 1px solid var(--border);
-		border-radius: 0.75rem;
+	.home-proof-surface {
+		border-top: 1px solid var(--site-line, var(--border));
 		background:
 			linear-gradient(
-				160deg,
-				light-dark(rgba(255, 255, 255, 0.65), rgba(24, 24, 27, 0.4)),
-				transparent 55%
+				180deg,
+				light-dark(rgba(244, 244, 245, 0.9), rgba(12, 12, 14, 0.95)),
+				transparent 40%
 			),
-			var(--background);
+			var(--site-wash, var(--background-secondary));
+		padding: 0;
+	}
+
+	.home-proof-bar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 auto;
+		border-bottom: 1px solid var(--site-line, var(--border));
+		padding: 1rem 1.5rem;
+		max-width: 72rem;
+	}
+
+	.home-proof-bar strong {
+		font-size: 1rem;
+		letter-spacing: -0.02em;
+	}
+
+	.home-proof-grid {
+		display: grid;
+		gap: 1.15rem;
+		margin: 0 auto;
 		padding: 1.5rem;
-		animation: landing-rise 0.8s ease-out 0.2s both;
+		max-width: 72rem;
 	}
 
-	.landing-demo-stage > p {
+	.home-proof-profile {
+		display: flex;
+		align-items: center;
+		gap: 0.9rem;
+	}
+
+	.home-proof-profile p {
+		margin: 0.15rem 0 0;
+		color: var(--site-muted, var(--color-muted));
+		font-size: 0.925rem;
+	}
+
+	.home-proof-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem;
+		margin: 0.25rem 0 0.5rem;
+	}
+
+	.home-install {
+		border-top: 1px solid var(--site-line, var(--border));
+		background: var(--site-panel, var(--background));
+		padding: 2.75rem 1.5rem 3.5rem;
+	}
+
+	.home-install-inner {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1.25rem;
+		margin: 0 auto;
+		max-width: 72rem;
+	}
+
+	.home-install h2 {
+		margin: 0 0 0.35rem;
+		font-size: 1.45rem;
+		letter-spacing: -0.03em;
+	}
+
+	.home-install p {
 		margin: 0;
+		color: var(--site-muted, var(--color-muted));
 	}
 
-	.landing-install-alt {
-		margin-top: 1rem;
-		color: var(--color-muted);
-		text-align: center;
+	.home-install-code {
+		margin: 0;
+		border: 1px solid var(--site-line, var(--border));
+		border-radius: 0.55rem;
+		background: var(--site-wash, var(--background-secondary));
+		padding: 0.85rem 1.05rem;
+		font-size: 0.9rem;
+		font-family: var(--site-mono, ui-monospace, monospace);
 	}
 
-	@keyframes landing-rise {
+	.home-install-code code {
+		border-radius: 0;
+		background: transparent;
+		padding: 0;
+		font-family: inherit;
+	}
+
+	@keyframes home-rise {
 		from {
 			opacity: 0;
-			transform: translateY(0.75rem);
+			transform: translateY(0.9rem);
 		}
 		to {
 			opacity: 1;
@@ -234,41 +365,41 @@
 		}
 	}
 
-	@keyframes landing-glow {
+	@keyframes home-drift {
 		from {
-			transform: translateY(0) scale(1);
-			opacity: 0.85;
+			transform: translate3d(0, 0, 0) scale(1);
 		}
 		to {
-			transform: translateY(1.5%) scale(1.03);
-			opacity: 1;
+			transform: translate3d(1%, -2%, 0) scale(1.05);
 		}
 	}
 
 	@media (max-width: 640px) {
-		.landing-hero {
-			padding-top: 3rem;
+		.home-hero {
+			align-items: center;
+			padding-top: 6.5rem;
 			min-height: auto;
 		}
 
-		.landing-actions {
+		.home-actions {
 			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.home-actions a[role="button"] {
 			width: 100%;
 		}
 
-		.landing-actions a {
-			width: 100%;
+		.home-watermark {
+			opacity: 0.06;
+			inset: auto 0.5rem 8% auto;
 		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.landing-hero-glow,
-		.landing-hero-content,
-		.landing-eyebrow,
-		.landing-hero h1,
-		.landing-lead,
-		.landing-actions,
-		.landing-demo-stage {
+		.home-mesh,
+		.home-copy,
+		.home-proof-head {
 			animation: none;
 		}
 	}

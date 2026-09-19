@@ -90,18 +90,31 @@
 	let { children } = $props();
 
 	let isDocsPage = $derived(page.url.pathname.startsWith("/docs"));
+	let isHome = $derived(page.url.pathname === "/");
 </script>
 
 <svelte:head>
 	<title>launch.css Documentation</title>
 </svelte:head>
 
-<header class="docs-header">
+<header class="docs-header" class:docs-header-home={isHome}>
 	<nav>
-		<a href="/"><strong>launch.css</strong></a>
+		<a href="/" class="docs-brand">launch.css</a>
 		<ul>
-			<li><a href="/docs/getting-started">Docs</a></li>
-			<li><a href="/customize">Theme Builder</a></li>
+			<li>
+				<a
+					href="/docs/getting-started"
+					aria-current={isDocsPage ? "page" : undefined}
+				>Docs</a>
+			</li>
+			<li>
+				<a
+					href="/customize"
+					aria-current={page.url.pathname === "/customize"
+					? "page"
+					: undefined}
+				>Theme Builder</a>
+			</li>
 			<li>
 				<a href="https://github.com/TorstenDittmann/launch.css"
 				>GitHub</a>
@@ -134,7 +147,7 @@
 		</main>
 	</div>
 {:else}
-	<main>
+	<main class="site-main" class:site-main-home={isHome}>
 		{@render children()}
 	</main>
 {/if}
