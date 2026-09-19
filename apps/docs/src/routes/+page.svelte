@@ -35,7 +35,7 @@
 			</p>
 			<p class="home-actions">
 				<a href="/docs/getting-started" role="button">Get Started</a>
-				<a href="/customize" class="home-link">Open Theme Builder</a>
+				<a href="/examples" class="home-link">See examples</a>
 			</p>
 		</div>
 	</section>

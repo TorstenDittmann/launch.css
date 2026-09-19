@@ -91,37 +91,55 @@
 
 	let isDocsPage = $derived(page.url.pathname.startsWith("/docs"));
 	let isHome = $derived(page.url.pathname === "/");
+	let isExamplesIndex = $derived(page.url.pathname === "/examples");
+	let isExampleDemo = $derived(
+		page.url.pathname.startsWith("/examples/") &&
+			page.url.pathname !== "/examples",
+	);
 </script>
 
 <svelte:head>
 	<title>launch.css Documentation</title>
 </svelte:head>
 
-<header class="docs-header" class:docs-header-home={isHome}>
-	<nav>
-		<a href="/" class="docs-brand">launch.css</a>
-		<ul>
-			<li>
-				<a
-					href="/docs/getting-started"
-					aria-current={isDocsPage ? "page" : undefined}
-				>Docs</a>
-			</li>
-			<li>
-				<a
-					href="/customize"
-					aria-current={page.url.pathname === "/customize"
-					? "page"
-					: undefined}
-				>Theme Builder</a>
-			</li>
-			<li>
-				<a href="https://github.com/TorstenDittmann/launch.css"
-				>GitHub</a>
-			</li>
-		</ul>
-	</nav>
-</header>
+{#if !isExampleDemo}
+	<header
+		class="docs-header"
+		class:docs-header-home={isHome}
+	>
+		<nav>
+			<a href="/" class="docs-brand">launch.css</a>
+			<ul>
+				<li>
+					<a
+						href="/docs/getting-started"
+						aria-current={isDocsPage ? "page" : undefined}
+					>Docs</a>
+				</li>
+				<li>
+					<a
+						href="/examples"
+						aria-current={isExamplesIndex || isExampleDemo
+						? "page"
+						: undefined}
+					>Examples</a>
+				</li>
+				<li>
+					<a
+						href="/customize"
+						aria-current={page.url.pathname === "/customize"
+						? "page"
+						: undefined}
+					>Theme Builder</a>
+				</li>
+				<li>
+					<a href="https://github.com/TorstenDittmann/launch.css"
+					>GitHub</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+{/if}
 
 {#if isDocsPage}
 	<div class="docs-layout">
@@ -146,6 +164,8 @@
 			{@render children()}
 		</main>
 	</div>
+{:else if isExampleDemo}
+	{@render children()}
 {:else}
 	<main class="site-main" class:site-main-home={isHome}>
 		{@render children()}
