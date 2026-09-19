@@ -1,7 +1,7 @@
 {
 	"name": "launch.css",
 	"type": "module",
-	"version": "1.1.6",
+	"version": "1.2.0",
 	"description": "A classless CSS framework built for speed. Style your website later—build it now.",
 	"homepage": "https://launch-css.dev",
 	"main": "dist/index.css",

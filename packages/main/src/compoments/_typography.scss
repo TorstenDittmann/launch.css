@@ -49,21 +49,30 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: 2em;
-	margin-bottom: 0.5em;
-	margin-block: 0;
+	margin-block: 2em 0.65em;
 
 	&:first-child {
-		margin-top: 0;
+		margin-block-start: 0;
 	}
 }
 
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+	margin-block-start: 2em;
+}
+
 p {
-	margin-bottom: 1em;
-	margin-block: 0;
+	margin-block: 0 1.1em;
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.75rem;
 
 	&:last-child {
-		margin-bottom: 0;
+		margin-block-end: 0;
 	}
 }
 
@@ -75,24 +84,33 @@ a {
 	text-underline-offset: 4px;
 }
 
-p {
-	font-weight: 400;
-	font-size: 1rem;
-	line-height: 1.75rem;
-}
-
 blockquote {
+	margin-block: 1.25em;
 	border-left-width: 2px;
-	border-color: #27272a;
+	border-color: var(--border);
+	padding-inline-start: 1rem;
 	font-style: italic;
 }
 
 del {
-	color: #7f1d1d;
+	color: light-dark(#7f1d1d, #fca5a5);
 }
 
 small {
 	font-size: 0.875em;
+}
+
+mark {
+	border-radius: 0.125rem;
+	background-color: light-dark(#fef08a, #854d0e);
+	padding: 0.125rem 0.25rem;
+	color: light-dark(#422006, #fef9c3);
+}
+
+abbr {
+	cursor: help;
+	text-decoration: underline dotted;
+	text-underline-offset: 2px;
 }
 
 sub,

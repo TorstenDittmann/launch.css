@@ -58,12 +58,21 @@
 					title: "Accordion",
 					href: "/docs/components/accordion",
 				},
+				{ title: "Alert", href: "/docs/components/alert" },
+				{ title: "Avatar", href: "/docs/components/avatar" },
+				{ title: "Card", href: "/docs/components/card" },
 				{ title: "Dialog", href: "/docs/components/dialog" },
-				{ title: "Tabs", href: "/docs/components/tabs" },
-				{ title: "Tables", href: "/docs/components/tables" },
+				{ title: "Kbd", href: "/docs/components/kbd" },
+				{ title: "Meter", href: "/docs/components/meter" },
 				{
 					title: "Progress",
 					href: "/docs/components/progress",
+				},
+				{ title: "Tables", href: "/docs/components/tables" },
+				{ title: "Tabs", href: "/docs/components/tabs" },
+				{
+					title: "Timeline",
+					href: "/docs/components/timeline",
 				},
 				{ title: "Tooltip", href: "/docs/components/tooltip" },
 			],
@@ -81,25 +90,56 @@
 	let { children } = $props();
 
 	let isDocsPage = $derived(page.url.pathname.startsWith("/docs"));
+	let isHome = $derived(page.url.pathname === "/");
+	let isExamplesIndex = $derived(page.url.pathname === "/examples");
+	let isExampleDemo = $derived(
+		page.url.pathname.startsWith("/examples/") &&
+			page.url.pathname !== "/examples",
+	);
 </script>
 
 <svelte:head>
 	<title>launch.css Documentation</title>
 </svelte:head>
 
-<header class="docs-header">
-	<nav>
-		<a href="/"><strong>launch.css</strong></a>
-		<ul>
-			<li><a href="/docs/getting-started">Docs</a></li>
-			<li><a href="/customize">Theme Builder</a></li>
-			<li>
-				<a href="https://github.com/TorstenDittmann/launch-css"
-				>GitHub</a>
-			</li>
-		</ul>
-	</nav>
-</header>
+{#if !isExampleDemo}
+	<header
+		class="docs-header"
+		class:docs-header-home={isHome}
+	>
+		<nav>
+			<a href="/" class="docs-brand">launch.css</a>
+			<ul>
+				<li>
+					<a
+						href="/docs/getting-started"
+						aria-current={isDocsPage ? "page" : undefined}
+					>Docs</a>
+				</li>
+				<li>
+					<a
+						href="/examples"
+						aria-current={isExamplesIndex || isExampleDemo
+						? "page"
+						: undefined}
+					>Examples</a>
+				</li>
+				<li>
+					<a
+						href="/customize"
+						aria-current={page.url.pathname === "/customize"
+						? "page"
+						: undefined}
+					>Theme Builder</a>
+				</li>
+				<li>
+					<a href="https://github.com/TorstenDittmann/launch.css"
+					>GitHub</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+{/if}
 
 {#if isDocsPage}
 	<div class="docs-layout">
@@ -124,8 +164,10 @@
 			{@render children()}
 		</main>
 	</div>
+{:else if isExampleDemo}
+	{@render children()}
 {:else}
-	<main>
+	<main class="site-main" class:site-main-home={isHome}>
 		{@render children()}
 	</main>
 {/if}
