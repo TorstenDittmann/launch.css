@@ -95,6 +95,19 @@ small {
 	font-size: 0.875em;
 }
 
+mark {
+	border-radius: 0.125rem;
+	background-color: light-dark(#fef08a, #854d0e);
+	padding: 0.125rem 0.25rem;
+	color: light-dark(#422006, #fef9c3);
+}
+
+abbr {
+	cursor: help;
+	text-decoration: underline dotted;
+	text-underline-offset: 2px;
+}
+
 sub,
 sup {
 	position: relative;

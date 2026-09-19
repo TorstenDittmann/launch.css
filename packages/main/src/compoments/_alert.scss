@@ -1,0 +1,30 @@
+[role="alert"],
+[role="status"],
+[role="note"] {
+	display: block;
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--border);
+	border-radius: calc(0.5rem - 2px);
+	background-color: var(--background-secondary);
+	padding: 0.75rem 1rem;
+	color: var(--color);
+	font-size: 0.875rem;
+	line-height: 1.5rem;
+
+	&[aria-label*="error" i],
+	&[aria-label*="danger" i],
+	&[aria-label*="warning" i] {
+		border-color: var(--background-danger);
+		background-color: var(--background-danger);
+		color: var(--color-danger);
+	}
+
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}

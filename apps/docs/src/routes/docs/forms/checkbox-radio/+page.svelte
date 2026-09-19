@@ -69,3 +69,22 @@
   Enable notifications
 </label>`}
 />
+
+<h2>Switch States</h2>
+
+<CodePreview
+	code={`<label>
+  <input type="checkbox" role="switch" checked>
+  Dark mode
+</label>
+
+<label>
+  <input type="checkbox" role="switch" disabled>
+  Unavailable
+</label>
+
+<label>
+  <input type="checkbox" role="switch" checked disabled>
+  Locked on
+</label>`}
+/>

@@ -27,7 +27,7 @@
     },
     "packages/main": {
       "name": "launch.css",
-      "version": "1.1.6",
+      "version": "1.2.0",
       "devDependencies": {
         "modern-normalize": "^3.0.1",
         "publint": "^0.3.15",

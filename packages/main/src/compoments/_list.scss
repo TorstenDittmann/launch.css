@@ -6,3 +6,21 @@ ol {
 		margin: 0.5rem;
 	}
 }
+
+dl {
+	margin: 0;
+
+	dt {
+		margin-top: 1rem;
+		font-weight: 600;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	dd {
+		margin: 0.25rem 0 0;
+		color: var(--color-muted);
+	}
+}

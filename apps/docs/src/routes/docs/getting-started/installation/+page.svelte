@@ -57,7 +57,7 @@ import 'launch.css';`}
 <h2>Download</h2>
 <p>
 	You can also <a
-		href="https://github.com/TorstenDittmann/launch-css/releases"
+		href="https://github.com/TorstenDittmann/launch.css/releases"
 	>download the CSS file</a> directly from GitHub releases and include it in
 	your project.
 </p>

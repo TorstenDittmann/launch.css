@@ -58,12 +58,21 @@
 					title: "Accordion",
 					href: "/docs/components/accordion",
 				},
+				{ title: "Alert", href: "/docs/components/alert" },
+				{ title: "Avatar", href: "/docs/components/avatar" },
+				{ title: "Card", href: "/docs/components/card" },
 				{ title: "Dialog", href: "/docs/components/dialog" },
-				{ title: "Tabs", href: "/docs/components/tabs" },
-				{ title: "Tables", href: "/docs/components/tables" },
+				{ title: "Kbd", href: "/docs/components/kbd" },
+				{ title: "Meter", href: "/docs/components/meter" },
 				{
 					title: "Progress",
 					href: "/docs/components/progress",
+				},
+				{ title: "Tables", href: "/docs/components/tables" },
+				{ title: "Tabs", href: "/docs/components/tabs" },
+				{
+					title: "Timeline",
+					href: "/docs/components/timeline",
 				},
 				{ title: "Tooltip", href: "/docs/components/tooltip" },
 			],
@@ -94,7 +103,7 @@
 			<li><a href="/docs/getting-started">Docs</a></li>
 			<li><a href="/customize">Theme Builder</a></li>
 			<li>
-				<a href="https://github.com/TorstenDittmann/launch-css"
+				<a href="https://github.com/TorstenDittmann/launch.css"
 				>GitHub</a>
 			</li>
 		</ul>
