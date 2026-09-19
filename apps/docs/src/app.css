@@ -243,15 +243,19 @@ body {
 }
 
 .docs-content h1 {
-	margin-bottom: 0.35rem;
+	margin-block: 0 0.5rem;
 	letter-spacing: -0.03em;
 }
 
 .docs-content > p:first-of-type {
-	margin-bottom: 2rem;
+	margin-block: 0 2rem;
 	color: var(--site-muted);
 	font-size: 1.125rem;
 	line-height: 1.65;
+}
+
+.docs-content h2 {
+	margin-block-start: 2.75rem;
 }
 
 .docs-layout {

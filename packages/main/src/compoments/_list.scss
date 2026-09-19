@@ -1,26 +1,35 @@
 ul,
 ol {
-	margin: 0;
+	margin-block: 0 1em;
+	padding-inline-start: 1.5rem;
 
 	li {
-		margin: 0.5rem;
+		margin-block: 0.5em;
+	}
+
+	&:last-child {
+		margin-block-end: 0;
 	}
 }
 
 dl {
-	margin: 0;
+	margin-block: 0 1em;
 
 	dt {
-		margin-top: 1rem;
+		margin-block-start: 1rem;
 		font-weight: 600;
 
 		&:first-child {
-			margin-top: 0;
+			margin-block-start: 0;
 		}
 	}
 
 	dd {
 		margin: 0.25rem 0 0;
 		color: var(--color-muted);
+	}
+
+	&:last-child {
+		margin-block-end: 0;
 	}
 }
