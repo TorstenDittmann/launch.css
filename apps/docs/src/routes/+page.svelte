@@ -111,10 +111,27 @@
 	.home-hero {
 		position: relative;
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 		overflow: clip;
-		padding: 8rem 1.5rem 4.5rem;
-		min-height: 92vh;
+		padding: 7rem 1.5rem 5rem;
+		min-height: 100vh;
+		background:
+			radial-gradient(
+				ellipse 80% 55% at 0% 0%,
+				light-dark(#e4e4e7, #27272a),
+				transparent 55%
+			),
+			radial-gradient(
+				ellipse 70% 50% at 100% 10%,
+				light-dark(#d4d4d8, #3f3f46),
+				transparent 50%
+			),
+			linear-gradient(
+				165deg,
+				light-dark(#fafafa, #09090b) 0%,
+				light-dark(#f4f4f5, #0c0c0e) 45%,
+				light-dark(#e4e4e7, #18181b) 100%
+			);
 	}
 
 	.home-atmosphere {
@@ -126,23 +143,17 @@
 
 	.home-mesh {
 		position: absolute;
-		inset: -15% 0 auto;
-		height: 85%;
+		inset: -10% -5%;
 		background:
 			radial-gradient(
-				ellipse 60% 50% at 12% 30%,
-				light-dark(rgba(24, 24, 27, 0.12), rgba(250, 250, 250, 0.08)),
-				transparent 70%
+				circle at 20% 30%,
+				light-dark(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.05)),
+				transparent 35%
 			),
 			radial-gradient(
-				ellipse 50% 45% at 92% 12%,
-				light-dark(rgba(113, 113, 122, 0.22), rgba(63, 63, 70, 0.5)),
-				transparent 65%
-			),
-			radial-gradient(
-				ellipse 70% 40% at 48% 70%,
-				light-dark(rgba(228, 228, 231, 0.95), rgba(24, 24, 27, 0.85)),
-				transparent 70%
+				circle at 75% 20%,
+				light-dark(rgba(24, 24, 27, 0.08), rgba(250, 250, 250, 0.06)),
+				transparent 40%
 			);
 		animation: home-drift 16s ease-in-out infinite alternate;
 	}
@@ -153,32 +164,36 @@
 		background-image:
 			linear-gradient(
 				to right,
-				light-dark(rgba(24, 24, 27, 0.045), rgba(250, 250, 250, 0.045))
+				light-dark(rgba(24, 24, 27, 0.07), rgba(250, 250, 250, 0.06))
 					1px,
 				transparent 1px
 			),
 			linear-gradient(
 				to bottom,
-				light-dark(rgba(24, 24, 27, 0.045), rgba(250, 250, 250, 0.045))
+				light-dark(rgba(24, 24, 27, 0.07), rgba(250, 250, 250, 0.06))
 					1px,
 				transparent 1px
 			);
-		background-size: 3.5rem 3.5rem;
-		mask-image: linear-gradient(#000 0%, transparent 88%);
+		background-size: 3.25rem 3.25rem;
+		mask-image: radial-gradient(
+			ellipse 75% 65% at 35% 45%,
+			#000 10%,
+			transparent 70%
+		);
 	}
 
 	.home-watermark {
 		position: absolute;
-		top: 18%;
-		right: max(1rem, 4vw);
+		top: 22%;
+		right: max(1.5rem, 5vw);
 		margin: 0;
-		opacity: 0.11;
+		opacity: 0.16;
 		color: var(--site-ink, var(--color));
-		font-size: clamp(0.72rem, 1.15vw, 0.9rem);
+		font-size: clamp(0.75rem, 1.2vw, 0.95rem);
 		line-height: 1.75;
 		font-family: var(--site-mono, ui-monospace, monospace);
 		white-space: pre;
-		transform: rotate(-3deg);
+		transform: rotate(-2.5deg);
 		user-select: none;
 	}
 
